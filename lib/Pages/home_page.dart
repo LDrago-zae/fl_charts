@@ -9,15 +9,42 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.black12,
+        backgroundColor: Colors.white10,
         body: SizedBox.expand(
-          child: Row(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               _chart1(),
-              const SizedBox(width: 20,),
+              const SizedBox(
+                width: 20,
+              ),
               _chart2(),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.indigo[900],
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PieChart(
+                        PieChartData(),
+                      ),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'Tap to see Pie Chart',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                ),
+              ),
             ],
           ),
         ),
@@ -40,6 +67,7 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+
   Widget _chart2() {
     return const SizedBox(
       height: 300,
