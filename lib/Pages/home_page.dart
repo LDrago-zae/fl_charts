@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:fl_charts/Widgets/fl_line_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:fl_charts/Widgets/pie_chart.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,9 +10,12 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Line Charts"),
+        ),
         backgroundColor: Colors.white10,
         body: SizedBox.expand(
-          child: Column(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -31,9 +35,7 @@ class HomePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => PieChart(
-                        PieChartData(),
-                      ),
+                      builder: (context) => const PieChartPage(),
                     ),
                   );
                 },
