@@ -2,6 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:fl_charts/Widgets/fl_line_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_charts/Widgets/pie_chart.dart';
+import 'package:fl_charts/Widgets/scatter_plot.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -41,6 +42,25 @@ class HomePage extends StatelessWidget {
                 },
                 child: const Text(
                   'Tap to see Pie Chart',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.indigo[900],
+                ),
+                onPressed: () {
+                  const Text("Tap to see Scatter Plot");
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const ScatterPlot(),),);
+                },
+                child: const Text(
+                  'Tap to see Scatter Plot',
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
